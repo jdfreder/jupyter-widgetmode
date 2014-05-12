@@ -1,1 +1,1 @@
-from widgetmode import widgetmode
+from .widgetmode import widgetmode
