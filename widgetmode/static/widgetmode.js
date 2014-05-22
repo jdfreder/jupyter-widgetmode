@@ -5,7 +5,7 @@ if (!window.widget_mode) {
         $('#notebook-container').width('100%');
         $('.cell:not(.code_cell)').hide();
         $('.output, .prompt').hide();
-	$('.input:not(.widget-numeric-text):not(.widget-text)').hide()
+        $('.input:not(.widget-numeric-text):not(.widget-text)').hide() // TODO: Remove for IPy3
         $('#notebook div.cell.selected').css('border', 'none');
         $('#notebook').css('padding', '0px');
 
