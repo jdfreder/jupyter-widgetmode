@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
-
+from setuptools import setup
 try:
-    from setuptools import setup
-except ImportError:
-    from distutils.core import setup
+    from ipythonpip import cmdclass
+except:
+    import pip, importlib
+    pip.main(['install', 'ipython-pip']); cmdclass = importlib.import_module('ipythonpip').cmdclass
 
 setup(
     name='widgetmode',
@@ -17,7 +18,6 @@ setup(
     classifiers=['Development Status :: 4 - Beta',
                  'Programming Language :: Python :: 2.7',
                  'License :: OSI Approved :: MIT License'],
-    packages=['widgetmode'],
-    package_data={'': ['*.js',
-                       'static/*.js']}
+    install_requires=['ipython-pip'],
+    cmdclass=cmdclass('widgetmode', 'widgetmode/init'),
 )
