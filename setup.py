@@ -4,7 +4,7 @@ try:
     from ipythonpip import cmdclass
 except:
     import pip, importlib
-    pip.main(['install', 'ipython-pip']); cmdclass = importlib.import_module('ipythonpip').cmdclass
+    pip.main(['install', 'jupyter-pip']); cmdclass = importlib.import_module('jupyterpip').cmdclass
 
 setup(
     name='widgetmode',
@@ -18,6 +18,6 @@ setup(
     classifiers=['Development Status :: 4 - Beta',
                  'Programming Language :: Python :: 2.7',
                  'License :: OSI Approved :: MIT License'],
-    install_requires=['ipython-pip'],
+    install_requires=['jupyter-pip'],
     cmdclass=cmdclass('widgetmode', 'widgetmode/init'),
 )
